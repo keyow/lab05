@@ -1,7 +1,7 @@
 name: CI
 on: [ push ]
 jobs:
-  building:
+  Building and testing:
     runs-on: ubuntu-latest
 
     steps:
@@ -11,18 +11,11 @@ jobs:
       - name: build
         shell: bash
         run: |
-          ls 
           git submodule update --init --recursive
           cmake -B build
           cd build
           make
-          cd ..
-  testing:
-    runs-on: ubuntu-latest
-    steps:
       - name: test
         shell: bash
         run: |
-          ls
-          cd build
           ./tests
