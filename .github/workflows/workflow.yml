@@ -40,7 +40,10 @@ jobs:
           gcovr tests/test.cpp -o report
 
       - name: run lcov
-        run: lcov --capture --directory . --output-file lcov_output.info
+        run: | 
+          ls
+          lcov --capture --directory . --output-file lcov_output.info
+          ls
 
       - name: coveralls
         uses: coverallsapp/github-action@master
