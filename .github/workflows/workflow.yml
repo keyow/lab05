@@ -16,10 +16,13 @@ jobs:
           cmake -B build
           cd build
           make
+          cd ..
   testing:
     runs-on: ubuntu-latest
     steps:
       - name: test
         shell: bash
         run: |
+          ls
+          cd build
           ./tests
