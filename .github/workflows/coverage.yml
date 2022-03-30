@@ -10,5 +10,6 @@ jobs:
       - name: coveralls
         uses: coverallsapp/github-action@master
         with:
+          run: gem install coveralls-lcov
           path-to-lcov: ${{ github.workspace }}/coverage/lcov.info
           github-token: ${{ secrets.github_token }}
