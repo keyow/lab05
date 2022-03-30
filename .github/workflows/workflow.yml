@@ -10,15 +10,15 @@ jobs:
 
       - name: build
         shell: bash
-        run:
+        run: |
           cmake -B build
-        cd build
-        make
+          cd build
+          make
   testing:
     runs-on: ubuntu-latest
     steps:
       - name: test
         shell: bash
-        run:
+        run: |
           cd build
           ./tests
