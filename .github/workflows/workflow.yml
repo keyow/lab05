@@ -34,6 +34,10 @@ jobs:
           sudo pip install --user cpp-coveralls
           sudo apt-get install -y lcov
 
+      - name: run gcovr
+        run: |
+          gocvr tests/test.cpp -o report
+
       - name: run lcov
         run: lcov --capture --directory . --output-file lcov.info
 
