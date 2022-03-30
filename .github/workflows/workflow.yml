@@ -20,5 +20,6 @@ jobs:
       - name: test
         shell: bash
         run: |
+          apt install googletest
           cd build
           ./tests
