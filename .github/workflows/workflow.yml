@@ -28,3 +28,7 @@ jobs:
           cmake -B build
           cd build
           make ./tests
+
+      - name: coveralls
+        uses: coverallsapp/github-action@master
+          github-token: ${{ secrets.github_token }}
