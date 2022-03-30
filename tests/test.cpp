@@ -15,7 +15,7 @@ TEST(Transaction, fee_test) {
     EXPECT_TRUE(transaction.Make(John, James, 100));
 
     Account Jack(111, 100);
-    EXPECT_FALSE(transaction.Make(Jack, James, 100));
+    EXPECT_TRUE(transaction.Make(Jack, James, 100)); // <--- error here
 
     Jack.Lock();
     Jack.ChangeBalance(-10);
