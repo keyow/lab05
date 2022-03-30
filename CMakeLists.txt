@@ -4,6 +4,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(BUILD_TESTS "Build tests" ON)
+option(COVERAGE "Check coverage" ON)
 
 project(banking)
 
@@ -22,6 +23,11 @@ if (BUILD_TESTS)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest)
     add_executable(tests
             ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp)
-    target_link_libraries(tests ${PROJECT_NAME} gtest_main)
+    target_link_libraries(tests ${PROJECT_NAME} gtest_main gmock_main)
     add_test(NAME unit_tests COMMAND tests)
+endif()
+
+if (COVERAGE)
+    target_compile_options(tests PRIVATE --coverage)
+    target_link_libraries(tests --coverage)
 endif()
