@@ -29,10 +29,11 @@ jobs:
           cd build
           make ./tests
 
-      - name: install lcov
+      - name: install lcov and gcovr
         run: |
           sudo pip install --user cpp-coveralls
           sudo apt-get install -y lcov
+          sudo apt-get install gcovr
 
       - name: run gcovr
         run: |
