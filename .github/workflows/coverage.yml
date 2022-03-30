@@ -11,6 +11,12 @@ jobs:
         run: |
           sudo apt-get install -y lcov
           sudo gem install coveralls-lcov
+
+      - name: npm install, make test-coverage
+        run: |
+          sudo npm install
+          sudo make test-coverage
+
       - name: coveralls
         uses: coverallsapp/github-action@master
         with:
