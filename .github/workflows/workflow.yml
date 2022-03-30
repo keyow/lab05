@@ -11,6 +11,7 @@ jobs:
       - name: build
         shell: bash
         run: |
+          apt install googletest
           cmake -B build
           cd build
           make
@@ -20,6 +21,5 @@ jobs:
       - name: test
         shell: bash
         run: |
-          apt install googletest
           cd build
           ./tests

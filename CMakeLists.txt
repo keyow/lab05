@@ -7,7 +7,7 @@ option(BUILD_TESTS "Build tests" ON)
 
 project(banking)
 
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party/gtest)
+add_subdirectory(third-party/gtest)
 
 add_library(${PROJECT_NAME} STATIC
         ${CMAKE_CURRENT_SOURCE_DIR}/banking/Account.cpp
