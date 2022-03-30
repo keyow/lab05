@@ -1,7 +1,7 @@
 name: CI
 on: [ push ]
 jobs:
-  Building and testing:
+  building:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,7 +15,12 @@ jobs:
           cmake -B build
           cd build
           make
+          cd ..
+  testing:
+    runs-on: ubuntu-latest
+    steps:
       - name: test
         shell: bash
         run: |
+          cd build
           ./tests
