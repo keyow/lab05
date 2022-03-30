@@ -37,7 +37,7 @@ jobs:
 
       - name: run gcovr
         run: |
-          python gocvr tests/test.cpp -o report
+          gcovr tests/test.cpp -o report
 
       - name: run lcov
         run: lcov --capture --directory . --output-file lcov.info
