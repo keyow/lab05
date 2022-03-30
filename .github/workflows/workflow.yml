@@ -29,6 +29,11 @@ jobs:
           cd build
           make ./tests
 
+      - name: npm install, make test-coverage
+        run: |
+          npm install
+          make test-coverage
+
       - name: coveralls
         uses: coverallsapp/github-action@master
         with:
