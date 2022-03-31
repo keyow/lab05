@@ -38,7 +38,7 @@ jobs:
         run: | 
           lcov --capture --directory build/CMakeFiles/tests.dir/tests --output-file lcov.info
           lcov --remove lcov.info '/usr/include/*' '/home/keyow/workspace/projects/lab05/include/*' -o lcov.info
-          lcov --remove lcov.info '/home/keyow/workspace/projects/lab05/third-party/gtest/' -o lcov.info
+          lcov --remove lcov.info '/home/keyow/workspace/projects/lab05/third-party/gtest/*' -o lcov.info
 
       - name: coveralls
         uses: coverallsapp/github-action@master
