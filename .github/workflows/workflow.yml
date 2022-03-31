@@ -37,7 +37,7 @@ jobs:
       - name: run lcov
         run: | 
           ls
-          cd ./build/CMakeFiles/test.dir/tests
+          cd ./build/CMakeFiles/tests.dir/tests
           ls
           lcov --capture --directory . --output-file lcov_output.info
           ls
