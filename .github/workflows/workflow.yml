@@ -37,13 +37,12 @@ jobs:
       - name: run lcov
         run: | 
           ls
-          cd ./build/CMakeFiles/tests.dir/tests
-          ls
-          lcov --capture --directory . --output-file lcov_output.info
+          cd gcda_files
+          lcov --capture --directory . --output-file lcov.info
           ls
 
       - name: coveralls
         uses: coverallsapp/github-action@master
         with:
-          path-to-lcov: "./build/CMakeFiles/test.dir/tests/lcov.info"
+          path-to-lcov: "./gcda_files/lcov.info
           github-token: ${{ secrets.github_token }}
