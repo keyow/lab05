@@ -28,6 +28,7 @@ jobs:
           cmake -B build
           cd build
           make ./tests
+          ./tests
 
       - name: install lcov and gcovr
         run: |
@@ -37,12 +38,11 @@ jobs:
       - name: run lcov
         run: | 
           ls
-          cd gcda_files
           lcov --capture --directory . --output-file lcov.info
           ls
 
       - name: coveralls
         uses: coverallsapp/github-action@master
         with:
-          path-to-lcov: "./gcda_files/lcov.info"
+          path-to-lcov: "./lcov.info"
           github-token: ${{ secrets.github_token }}
