@@ -32,15 +32,12 @@ jobs:
       - name: install lcov and gcovr
         run: |
           sudo pip install --user cpp-coveralls
-          pip install gcovr
           sudo apt-get install -y lcov
-
-      - name: run gcovr
-        run: |
-          gcovr tests/test.cpp -o report
 
       - name: run lcov
         run: | 
+          ls
+          cd ./build/CMakeFiles/test.dir/tests
           ls
           lcov --capture --directory . --output-file lcov_output.info
           ls
@@ -48,5 +45,5 @@ jobs:
       - name: coveralls
         uses: coverallsapp/github-action@master
         with:
-          path-to-lcov: "./lcov_output.info"
+          path-to-lcov: "./build/CMakeFiles/test.dir/tests/lcov.info
           github-token: ${{ secrets.github_token }}
