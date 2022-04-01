@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/keyow/lab05/badge.svg)](https://coveralls.io/github/keyow/lab05)
+
 ## Laboratory work V
 
 Данная лабораторная работа посвещена изучению фреймворков для тестирования на примере **GTest**
