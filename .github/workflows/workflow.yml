@@ -36,9 +36,8 @@ jobs:
 
       - name: run lcov
         run: | 
-          pwd
           lcov --capture --directory build/CMakeFiles/tests.dir/tests --output-file lcov.info
-          lcov --remove lcov.info '/usr/include/*' '/home/runner/work/lab05/lab05/include/*' -o lcov.info
+          lcov --remove lcov.info '/usr/include/*' -o lcov.info
           lcov --remove lcov.info '/home/runner/work/lab05/lab05/third-party/gtest/*' -o lcov.info
 
       - name: coveralls
